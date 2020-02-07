@@ -1,0 +1,1 @@
+create view vFemaleStudent as select * from Student where (Sex='f');

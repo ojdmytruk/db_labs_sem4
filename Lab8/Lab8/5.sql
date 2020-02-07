@@ -1,0 +1,4 @@
+USE LazyStudent;
+CREATE TABLE Partners 
+	(PartnerID INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
+     PartnerName VARCHAR(50) UNIQUE NOT NULL);

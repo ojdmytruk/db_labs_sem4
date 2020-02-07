@@ -1,0 +1,15 @@
+USE LazyStudent;
+CREATE TABLE Clients 
+	(ClientID INT PRIMARY KEY IDENTITY (1,1) NOT NULL,
+     UserEn VARCHAR(30) NOT NULL,
+     CONSTRAINT UserEn_ FOREIGN KEY (UserEn) REFERENCES EnrollUsers (UserEnroll),
+     FirstName VARCHAR(40) NOT NULL, 
+	 LastName VARCHAR(40) NOT NULL,
+     Email VARCHAR(40) NOT NULL, 
+	 Password VARCHAR(40) NOT NULL,
+     Phone VARCHAR(40) NOT NULL, 
+	 RegDate DATE DEFAULT (GETDATE()));
+CREATE TABLE Students 
+	(StudentID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+     ClientID INT NOT NULL,
+     CONSTRAINT FK_StudentClientID FOREIGN KEY (ClientID) REFERENCES Clients (ClientID));

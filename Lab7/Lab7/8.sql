@@ -1,0 +1,67 @@
+USE Northwind;
+--CREATE FUNCTION PascalCase
+--(
+--  @input nvarchar(max)
+--)
+--RETURNS nvarchar(max)
+--AS
+--BEGIN
+--  IF @input IS NULL
+--  BEGIN
+--    RETURN NULL
+--  END
+--  DECLARE @output nvarchar(max)
+--  DECLARE @ctr int, @len int, @found_at int
+--  DECLARE @LOWER_CASE_a int, @LOWER_CASE_z int, @Delimiter char(3), @UPPER_CASE_A int, @UPPER_CASE_Z int
+--  DECLARE @RU_LOWER_CASE_a int, @RU_LOWER_CASE_z int, @RU_UPPER_CASE_A int, @RU_UPPER_CASE_Z int
+--  SET @ctr = 1
+--  SET @len = LEN(@input)
+--  SET @output = ''
+--  SET @LOWER_CASE_a = 97
+
+--  SET @LOWER_CASE_z = 122
+--  SET @Delimiter = ' ,-'
+--  SET @UPPER_CASE_A = 65
+--  SET @UPPER_CASE_Z = 90
+--  SET @LOWER_CASE_a = 224
+--  SET @LOWER_CASE_z = 255
+--  SET @UPPER_CASE_A = 192
+--  SET @UPPER_CASE_Z = 223
+--  WHILE @ctr <= @len
+--  BEGIN
+--    WHILE CHARINDEX(SUBSTRING(@input,@ctr,1), @Delimiter) > 0
+--    BEGIN
+--      SET @output = @output + SUBSTRING(@input,@ctr,1)
+--      SET @ctr = @ctr + 1
+--    END
+--    IF (ASCII(SUBSTRING(@input,@ctr,1)) BETWEEN @LOWER_CASE_a AND @LOWER_CASE_z) OR
+--       (ASCII(SUBSTRING(@input,@ctr,1)) BETWEEN @RU_LOWER_CASE_a AND @RU_LOWER_CASE_z)
+--    BEGIN
+--      SET @output = @output + UPPER(SUBSTRING(@input,@ctr,1))
+--    END
+--    ELSE
+--    BEGIN
+--      SET @output = @output + SUBSTRING(@input,@ctr,1)
+--    END
+--    SET @ctr = @ctr + 1
+--    WHILE CHARINDEX(SUBSTRING(@input,@ctr,1), @Delimiter) = 0 AND (@ctr <= @len)
+--    BEGIN
+--      IF (ASCII(SUBSTRING(@input,@ctr,1)) BETWEEN @UPPER_CASE_A AND @UPPER_CASE_Z) OR
+--         (ASCII(SUBSTRING(@input,@ctr,1)) BETWEEN @RU_UPPER_CASE_A AND @RU_UPPER_CASE_Z)
+--      BEGIN
+--        SET @output = @output + LOWER(SUBSTRING(@input,@ctr,1))
+--      END
+--      ELSE
+--      BEGIN
+
+--        SET @output = @output + SUBSTRING(@input,@ctr,1)
+--      END
+--      SET @ctr = @ctr + 1
+--    END
+--	SET @output = REPLACE(@output , ' ','');
+--  END
+--RETURN @output
+--END
+
+SELECT  dbo.PascalCase ('Мій маленький поні') AS 'Result';
+--DROP FUNCTION PascalCase

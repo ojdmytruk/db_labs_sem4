@@ -1,0 +1,1 @@
+ALTER TABLE Discounts ADD ClientName VARCHAR (20), ClientSurname VARCHAR (20);

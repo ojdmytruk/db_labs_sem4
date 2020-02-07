@@ -1,0 +1,2 @@
+USE LazyStudent;
+CREATE TABLE EnrollUsers (UserEnroll VARCHAR(30) PRIMARY KEY NOT NULL);
